@@ -1,0 +1,12 @@
+<nav>
+	<ul>
+		<li><a href="{{url_for('index')}}">Home</a></li>
+		<li><a href="{{url_for('about')}}">About</a></li>
+		<li><a href="{{url_for('posts')}}">Posts</a></li>
+		<li>
+			<a href="{{url_for('user')}}"><i class="fa-solid fa-user"></i></a>
+		</li>
+	</ul>
+	{% include 'loginButton.html' %}
+	<i class="hamburger fa-solid fa-bars"></i>
+</nav>
