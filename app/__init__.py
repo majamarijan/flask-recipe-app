@@ -20,6 +20,7 @@ def index():
 
 @app.get('/about')
 def about():
+  print(__name__)
   return render_template('about.html', title='About')
 
 # escaping to prevent xss
