@@ -1,6 +1,9 @@
 /* @import 'transition-style'; */
 @import './styles/footer.css';
 @import './styles/posts.css';
+@import './styles/wrapperbg.css';
+@import './styles/aboutbg.css';
+@import './styles/loginbg.css';
 
 :root {
 	--screen-sm: 720px;
@@ -67,16 +70,18 @@ dl dt {
 	flex-direction: column;
 	position: relative;
 	background: black;
-	background-image: url('wave-haikei.svg');
+	/* background-image: url('wave-haikei.svg');
 	background-position: center;
 	background-attachment: scroll;
-	background-size: cover;
+	background-size: cover; */
 }
 
 .content {
 	max-width: 850px;
 	margin: 0 auto;
 	transition: filter 0.8s ease-in-out;
+	position: relative;
+	z-index: 100;
 }
 
 /* HEADER */
@@ -86,16 +91,17 @@ header {
 	flex-flow: wrap;
 	justify-content: space-between;
 	align-items: center;
-	background: rgb(6, 6, 6);
+	background: rgba(6, 6, 6, 0.4);
 	position: sticky;
 	top: 0;
 	z-index: 10000;
+	backdrop-filter: blur(15px);
 }
 
 /* MAIN */
 main {
 	padding: 4rem 48px;
-	animation: circle-in-center 3s both;
+	/* animation: circle-in-center 3s both; */
 }
 
 @keyframes circle-in-center {
@@ -135,6 +141,8 @@ footer {
 	padding: 24px 48px;
 	background: black;
 	margin-top: auto;
+	position: relative;
+	z-index: 100;
 }
 
 /* HERO */
@@ -153,12 +161,30 @@ footer {
 	min-width: 450px;
 	object-fit: contain;
 	border-radius: 100%;
+	transform-origin: center;
+	transform: translate(0, 0);
+	transition: 0.4s ease-in-out;
+	animation: bounceInRight;
+	animation-duration: 1s;
 }
+
+.hero img:hover {
+	transform: scale(1.1);
+}
+
 .heroText {
 	flex: 1;
 }
+
+.heroText h1 {
+	animation: bounceInLeft;
+	animation-duration: 1s;
+}
+
 .heroText p {
 	max-width: 450px;
+	animation: bounceInLeft;
+	animation-duration: 1.3s;
 }
 .heroText p i {
 	font-size: 1.5rem;
@@ -171,6 +197,8 @@ footer {
 	padding: 8px 12px;
 	background: rgb(7, 156, 179);
 	transition: 0.2s linear;
+	animation: bounceInLeft;
+	animation-duration: 1.3s;
 }
 
 .heroText button:hover {
@@ -282,7 +310,7 @@ ul li a {
 	position: relative;
 	display: inline-block;
 	padding-bottom: 4px;
-	transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1)
+	transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 ul li a:hover {
@@ -376,6 +404,8 @@ nav .hamburger.active {
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	z-index: 1000;
 }
 
 /* FORM */
@@ -416,6 +446,8 @@ form [type='submit']:hover {
 	background-color: rgb(219, 60, 2);
 	outline: rgb(233, 233, 233) solid 1px;
 }
+
+/* EFFECTS */
 
 @media screen and (max-width: 968px) {
 	.hero {

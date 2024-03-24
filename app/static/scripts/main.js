@@ -11,13 +11,13 @@ window.onload = () => {
       e.preventDefault();
       login();
     })
-  } 
+  }
   // if (window.location.href.includes('posts')) {
   //   getPosts();
   // }
   hamburger.onclick = () => {
     hamburger.classList.toggle('active');
-    overlay.style.zIndex = 100;
+    overlay.style.zIndex = 500;
     if (hamburger.classList.contains('active')) {
       overlay.classList.add('overlay-animate');
       overlay.classList.remove('overlay-animate-back');
