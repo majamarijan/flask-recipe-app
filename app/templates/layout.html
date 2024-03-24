@@ -36,12 +36,7 @@
 	<body>
 		<div class="wrapper">
 			{% include 'mobileNav.html' %} {% include 'header.html' %}
-			<main>
-				<div class="content">
-				 {% block main %} {% endblock %}
-				</div>
-			</main>
-
+			<main>{% block main %} {% endblock %}</main>
 			{% include 'footer.html' %}
 		</div>
 		<script

@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
-from flask import Flask, url_for, request, jsonify, redirect, render_template, make_response, flash, Blueprint
+from flask import Flask, url_for, request, jsonify, redirect, render_template, make_response
 from markupsafe import escape
 import mimetypes
 mimetypes.add_type('image/svg+xml', '.svg')
-
 
 # make application factory
 # this file __init__.py contains the application factory and tells that the app folder is a package
@@ -25,16 +24,11 @@ def create_app():
 
   app.register_blueprint(post_views.postBp, url_prefix='/posts')
   app.add_url_rule('/', endpoint='posts')
-  app.add_url_rule('/list', endpoint='list')
   app.add_url_rule('/post/<int:post_id>', endpoint='post')
 
   @app.errorhandler(404)
   def not_found(error):
     return render_template("error.html", error=error), 404
-
-  # with app.test_request_context():
-  #   url_for('public_pages.static', filename='style.css')
-  #   url_for('public_pages.index', filename='index.html')
 
   return app
   

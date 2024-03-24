@@ -3,7 +3,7 @@ from . import public_route
 
 @public_route.get('/')
 def index():
-  return render_template('layout.html', name="", title="Flask App")
+  return render_template('index.html', title="Flask App")
 #   return render_template(public_route.index, name="", title="Flask App")
 
 @public_route.get("/about")
@@ -12,7 +12,7 @@ def about():
 
 
 # # escaping to prevent xss
-# # @view_pages.get('/<name>')
+# # @route.get('/<name>')
 # # def username(name):
 # #   return f'Hello, {escape(name)}!'
 
@@ -46,10 +46,3 @@ def login():
 #         return redirect(url_for("index"))
 #     return redirect(url_for("index"), code=302, Response=None)
 
-
-
-
-# building urls for the templates
-
-#     print(url_for('about'))
-#     print(url_for('user_id', id='550e8400-e29b-41d4-a716-446655440000'))
