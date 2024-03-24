@@ -1,0 +1,12 @@
+SETUP PROJECT
+1. pip install virtualenv
+2. python3.10 -m venv myenv //if error => sudo apt install python3-venv
+3. source myenv/bin/activate  //=> activate virtualenv
+4. pip list
+// install poetry
+5. myenv/bin/pip -U pip setuptools
+6. myenv/bin/pip install poetry
+7. poetry completions bash >> ~/.bash_completion //bash completions
+8. poetry new app
+//for existing PROJECT
+9. poetry init

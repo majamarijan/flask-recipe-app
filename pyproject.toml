@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "starterFlask"
+version = "0.1.0"
+description = "simple app"
+authors = ["majamarijan <majapianist@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.2"
+requests = "^2.31.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

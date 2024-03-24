@@ -4,6 +4,11 @@ from flask import Flask, url_for, request, jsonify, redirect, render_template, m
 from markupsafe import escape
 import mimetypes
 mimetypes.add_type('image/svg+xml', '.svg')
+from dotenv import dotenv_values
+
+# load_dotenv()  # take environment variables from .env.
+config = dotenv_values(".env")
+# print(config.get("DOMAIN_URL"))
 
 # make application factory
 # this file __init__.py contains the application factory and tells that the app folder is a package
