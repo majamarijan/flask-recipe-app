@@ -1,4 +1,6 @@
 /* @import 'transition-style'; */
+@import './styles/posts.css';
+
 
 :root {
 	--screen-sm: 720px;

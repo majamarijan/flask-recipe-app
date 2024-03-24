@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link
 			rel="stylesheet"
-			href="{{ url_for('static', filename='styles.css') }}"
+			href="{{ url_for('static', filename='main.css') }}"
 		/>
 		<link rel="icon" href="{{ url_for('static', filename='bear.png') }}" />
 		<link rel="stylesheet" href="https://unpkg.com/transition-style" />
@@ -38,38 +38,7 @@
 			{% include 'mobileNav.html' %} {% include 'header.html' %}
 			<main>
 				<div class="content">
-					{% if name == '' %}
-					<div class="hero">
-						<div class="heroText">
-							<h1>Welcome to Flask App!</h1>
-							<p>
-								This is the full stack app written in <br /><i
-									class="fa-brands fa-python"
-									style="color: #1469c5"
-								></i>
-								<i
-									class="fa-solid fa-pepper-hot"
-									style="color: rgb(5, 197, 197)"
-								></i>
-								<i class="fa-brands fa-html5" style="color: orangered"></i>
-								<i
-									class="fa-brands fa-css3-alt"
-									style="color: rgb(27, 27, 255)"
-								></i>
-								and
-								<i class="fa-brands fa-js" style="color: rgb(255, 217, 0)"></i>.
-							</p>
-							<button>Get Started</button>
-						</div>
-						<img
-							src="{{ url_for('static', filename='computer.png') }}"
-							alt="Flask"
-							transition-style="in:circle:center"
-							loading="lazy"
-						/>
-					</div>
-
-					{% else %} {% block main %} {% endblock %} {% endif %}
+				 {% block main %} {% endblock %}
 				</div>
 			</main>
 

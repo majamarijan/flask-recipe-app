@@ -1,7 +1,7 @@
 from flask import render_template
+from app.modules.posts import getPosts, getPost
 import requests
 import json
-from app.modules.posts import getPosts, getPost
 from . import postBp
 
 @postBp.get("/")

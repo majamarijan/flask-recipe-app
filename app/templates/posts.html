@@ -1,8 +1,27 @@
 {% extends "layout.html" %} {% block main %}
 <h1><i class="fa-brands fa-blogger"></i>Posts</h1>
-<ul>
+
+<div class="posts">
 	{% for post in posts %}
-	<li><a href="{{url_for('posts.get_post', post_id=post.id)}}">{{post.name}}</a></li>
+	<div class="card">
+		<div class="card-image">
+			<img src="{{post.image}}" alt="{{post.name}}" width="120" />
+		</div>
+		<div class="card-text">
+			<div class="card-tags">
+				<span>Cuisine: {{post.cuisine}}</span>
+			</div>
+			<div class="card-info">
+				<i class="fa-solid fa-stopwatch"></i>20min
+				<i class="fa-solid fa-utensils"></i>15min
+				<i class="fa-solid fa-bowl-food"></i>4
+				<i class="fa-solid fa-fire-flame-curved"></i>{{post.caloriesPerServing}}
+			</div>
+			<p>{{post.name}}</p>
+			<a href="{{url_for('posts.get_post', post_id=post.id)}}">{{post.name}}</a>
+		</div>
+	</div>
 	{% endfor %}
-</ul>
+</div>
+
 {% endblock %}

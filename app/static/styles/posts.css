@@ -1,0 +1,35 @@
+.content {
+	max-width: none !important;
+}
+
+.posts {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+	gap: 24px;
+}
+
+.posts .card {
+	display: flex;
+	flex-flow: row nowrap;
+	background: white;
+	color: rgb(30, 30, 30);
+	justify-content: space-between;
+	border-radius: 12px;
+	align-items: center;
+}
+
+.posts .card-image img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.posts .card-text {
+	padding: 0 0 24px 0;
+	flex: 1;
+	align-self: flex-start;
+}
+
+.posts .card .card-tags {
+	background: yellowgreen;
+	padding: 8px;
+}

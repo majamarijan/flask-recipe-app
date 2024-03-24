@@ -15,16 +15,15 @@ def create_app():
   app = Flask(__name__, instance_relative_config=True)
 
   # add routes
-  from .publicPages import views
-  from .postPages import views as postBp
+  from .routes import public_views, post_views
  
-  app.register_blueprint(views.public_pages)
+  app.register_blueprint(public_views.public_route)
   app.add_url_rule("/", endpoint="index")
   app.add_url_rule("/about", endpoint="about")
   app.add_url_rule('/user', endpoint='user')
   app.add_url_rule('/login', endpoint='login')
 
-  app.register_blueprint(postBp.postBp, url_prefix='/posts')
+  app.register_blueprint(post_views.postBp, url_prefix='/posts')
   app.add_url_rule('/', endpoint='posts')
   app.add_url_rule('/list', endpoint='list')
   app.add_url_rule('/post/<int:post_id>', endpoint='post')
