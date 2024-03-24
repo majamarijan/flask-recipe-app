@@ -14,7 +14,6 @@ config = dotenv_values(".env")
 # this file __init__.py contains the application factory and tells that the app folder is a package
 
 def create_app():
-  users= []
   # instance_relative_config=True: load config from instance folder
   app = Flask(__name__, instance_relative_config=True)
 
