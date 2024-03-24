@@ -1,18 +1,44 @@
+.posts-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+}
+
+.posts-wrapper .posts-sidebar {
+	grid-column: auto / span 1;
+}
 
 .posts {
+	grid-column: auto / span 2;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
 	gap: 24px;
+	max-width: var(--screen-lg);
+	margin: 0 auto;
+}
+
+.posts a {
+	color: transparent;
+	display: block;
 }
 
 .posts .card {
 	display: flex;
-	flex-flow: row nowrap;
-	background: white;
-	color: rgb(30, 30, 30);
-	justify-content: space-between;
+	flex-flow: column;
+	background: var(--gray);
+	color: var(--light);
 	border-radius: 12px;
-	align-items: center;
+	overflow: hidden;
+	transform-origin: center;
+	transform: scale(1);
+	transition: all 0.3s ease-in-out;
+	padding-bottom: 24px;
+	max-width: 380px;
+}
+
+.posts .card:hover {
+	cursor: pointer;
+	box-shadow: 0 0 5px var(--lightblue), 0 0 20px var(--white);
+	transform: scale(1.02);
 }
 
 .posts .card-image img {
@@ -21,12 +47,26 @@
 }
 
 .posts .card-text {
-	padding: 0 0 24px 0;
-	flex: 1;
-	align-self: flex-start;
+	min-height: 200px;
+	padding: 12px 24px;
 }
 
-.posts .card .card-tags {
-	background: yellowgreen;
-	padding: 8px;
+.posts .card-title {
+	font-family: cursive;
+}
+
+.posts .card-info {
+	padding-bottom: 1.2rem;
+	padding-top: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 6px;
+}
+
+.posts .card-info > span {
+	padding: 4px 8px;
+	background-color: rgba(0, 0, 20, 0.3);
+	border-radius: 8px;
+	color: var(--white);
+	font-size: 0.68rem;
 }

@@ -1,5 +1,4 @@
 /* @import 'transition-style'; */
-@import './styles/footer.css';
 @import './styles/posts.css';
 @import './styles/wrapperbg.css';
 @import './styles/aboutbg.css';
@@ -12,7 +11,7 @@
 	--primary: #002233;
 	--secondary: #680e4b;
 	--light: #e0e0e2;
-	--yelow: #ff9505;
+	--yellow: #ff9505;
 	--lightgreen: #7fb685;
 	--red: #721817;
 	--green: #0b6e4f;
@@ -25,6 +24,7 @@
 	--white: #fbf5f3;
 	--disabled1: #8a8d91;
 	--disabled2: #bcbdc0;
+	--purple: #7f0543;
 }
 
 * {
@@ -91,11 +91,11 @@ header {
 	flex-flow: wrap;
 	justify-content: space-between;
 	align-items: center;
-	background: rgba(6, 6, 6, 0.4);
+	background: rgba(6, 6, 6, 0.78);
 	position: sticky;
 	top: 0;
 	z-index: 10000;
-	backdrop-filter: blur(15px);
+	backdrop-filter: blur(5px);
 }
 
 /* MAIN */
@@ -283,18 +283,19 @@ nav {
 }
 
 .login {
-	background: var(--yelow);
-	color: white;
+	background: transparent;
+	color: var(--yellow);
 	font-weight: bold;
 	border-radius: 8px;
-	border: none;
+	border: 2px solid var(--yellow);
 	padding: 8px 12px;
+	transition: 0.2s ease-in-out;
 }
 
 .login:hover {
 	cursor: pointer;
-	box-shadow: 0 0 5px var(--yelow), 0 0 15px var(--yelow);
-	outline: 2px solid var(--light);
+	border: 2px solid var(--orange);
+	color: var(--orange);
 }
 
 nav ul {
@@ -309,7 +310,7 @@ ul li a {
 	color: var(--blue);
 	position: relative;
 	display: inline-block;
-	padding-bottom: 4px;
+	padding-bottom: 8px;
 	transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 

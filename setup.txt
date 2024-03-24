@@ -10,3 +10,4 @@ SETUP PROJECT
 8. poetry new app
 //for existing PROJECT
 9. poetry init
+10. poetry run flask app --debug run
