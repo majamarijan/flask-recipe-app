@@ -1,24 +1,27 @@
 .posts-wrapper {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+	grid-template-columns: 220px repeat(auto-fit, minmax(550px, 1fr));
+	min-height: 50vh;
+	position: relative;
+	gap: 12px;
 }
 
 .posts-wrapper .posts-sidebar {
-	grid-column: auto / span 1;
+	position: relative;
+	padding: 0;
 }
 
 .posts {
-	grid-column: auto / span 2;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-	gap: 24px;
-	max-width: var(--screen-lg);
-	margin: 0 auto;
+	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
+	gap: 12px;
+	justify-content: center;
 }
 
 .posts a {
 	color: transparent;
-	display: block;
+	display: flex;
+	max-width: 250px;
 }
 
 .posts .card {
@@ -31,14 +34,15 @@
 	transform-origin: center;
 	transform: scale(1);
 	transition: all 0.3s ease-in-out;
-	padding-bottom: 24px;
-	max-width: 380px;
 }
 
 .posts .card:hover {
 	cursor: pointer;
-	box-shadow: 0 0 5px var(--lightblue), 0 0 20px var(--white);
 	transform: scale(1.02);
+}
+
+.posts .card-image {
+	position: relative;
 }
 
 .posts .card-image img {
@@ -46,9 +50,24 @@
 	object-fit: cover;
 }
 
-.posts .card-text {
-	min-height: 200px;
-	padding: 12px 24px;
+.posts .card-image h3 {
+	font-size: 0.8rem;
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(1.2px);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 12px;
+	border-bottom: 4px solid var(--green);
+}
+
+.posts .card:hover .card-image h3 {
+	border-bottom: 4px solid var(--yellow);
+}
+
+.posts .card-body {
+	padding: 14px 12px;
 }
 
 .posts .card-title {
@@ -56,7 +75,7 @@
 }
 
 .posts .card-info {
-	padding-bottom: 1.2rem;
+	padding-bottom: 8px;
 	padding-top: 5px;
 	display: flex;
 	flex-flow: row nowrap;
@@ -69,4 +88,47 @@
 	border-radius: 8px;
 	color: var(--white);
 	font-size: 0.68rem;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+@media all and (max-width: 820px) {
+	.posts-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.posts-wrapper .posts-sidebar {
+		position: sticky;
+		top: 0;
+	}
+}
+
+@media all and (max-width: 680px) {
+	.posts {
+		grid-template-columns: 1fr;
+	}
+	.posts .card {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		min-width: 320px;
+	}
+
+	.posts a {
+		place-self: center;
+		max-width: 450px;
+	}
+
+	.posts .card .card-body {
+		align-self: center;
+	}
+
+	.posts .card {
+		min-width: 320px;
+	}
+}
+
+@media all and (max-width: 420px) {
+	.posts a {
+		place-self: start;
+	}
 }

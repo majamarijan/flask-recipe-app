@@ -17,16 +17,14 @@ window.onload = () => {
   // }
   hamburger.onclick = () => {
     hamburger.classList.toggle('active');
-    overlay.style.zIndex = 500;
+    if (overlay) overlay.style.zIndex = 500;
     if (hamburger.classList.contains('active')) {
       overlay.classList.add('overlay-animate');
       overlay.classList.remove('overlay-animate-back');
-      document.querySelector('.content').style.filter = 'blur(5px)';
       document.querySelector('.mobileMenu').style.display = 'block';
     } else {
       overlay.classList.remove('overlay-animate');
       overlay.classList.add('overlay-animate-back');
-      document.querySelector('.content').style.filter = 'none';
       document.querySelector('.mobileMenu').style.display = 'none';
     }
   };

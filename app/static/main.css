@@ -212,19 +212,19 @@ footer {
 /* OVERLAY */
 .overlay {
 	position: absolute;
-	right: 0;
-	top: 0;
-	opacity: 0.89;
+	inset: 0;
 	z-index: -1;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 	content-visibility: hidden;
+	background: rgba(0, 0, 0, 0.9);
+	backdrop-filter: blur(12px);
 }
 
 .overlay-animate {
-	animation: in-circle-swoop 3s forwards;
+	animation: in-circle-swoop 1.2s forwards;
 }
 @keyframes in-circle-swoop {
 	from {
@@ -237,17 +237,16 @@ footer {
 		clip-path: var(--circle-bottom-right-in);
 		left: 0;
 		bottom: 0;
-		background: black;
 	}
 }
 
 [transition-style='in:custom:circle-swoop'] {
-	--transition__duration: 5s;
+	--transition__duration: 2s;
 	animation-name: in-circle-swoop;
 }
 
 .overlay-animate-back {
-	animation: out-circle-swoop 1s forwards;
+	animation: out-circle-swoop 1.2s forwards;
 }
 @keyframes out-circle-swoop {
 	from {
@@ -389,6 +388,7 @@ nav .hamburger.active {
 }
 .mobileMenu nav {
 	display: block !important;
+	padding-top: 30vh;
 }
 .mobileMenu nav ul {
 	display: flex;
