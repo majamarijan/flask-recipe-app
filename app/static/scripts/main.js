@@ -43,4 +43,10 @@ window.onload = () => {
     }
   })
   console.log(window.history.state)
+
+  if (window.location.href.includes('post')) {
+    // const img = document.querySelector('#post-image');
+    // document.querySelector('.wrapper').style.backgroundImage = `url(${img.src})`;
+    document.querySelector('main').style.padding = '0px';
+  }
 };

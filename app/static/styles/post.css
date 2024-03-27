@@ -1,0 +1,87 @@
+.post-wrapper {
+	position: relative;
+	background-position: top;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	top: 0;
+}
+
+.post-wrapper ul {
+	list-style: none;
+	padding: 0;
+}
+
+.post-wrapper .post {
+	min-height: 300vh;
+	position: relative;
+}
+
+.post-wrapper .post-header {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	top: 100px;
+	bottom: 0;
+	z-index: 5;
+	position: sticky;
+}
+
+.post-wrapper .post-header h1 {
+	background: rgba(6, 6, 6, 0.78);
+	backdrop-filter: blur(8px);
+	text-align: center;
+	padding: 2rem 48px;
+	font-size: clamp(1.3rem, 5vw, 3.23rem);
+}
+
+.post .post-ingredients,
+.post .post-instructions {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 48px;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	padding-inline: 24px;
+}
+
+.post .post-ingredients {
+	height: 100vh;
+	position: sticky;
+	bottom: 0;
+	top: 100px;
+	background: var(--lightblue);
+	z-index: 200;
+}
+
+.post .post-ingredients h1 {
+	font-size: larger;
+}
+
+.post .post-instructions {
+	z-index: 300;
+	background: var(--black);
+	height: 100vh;
+	position: sticky;
+	bottom: 0;
+	top: 100px;
+}
+
+.post .post-ingredients .title,
+.post .post-instructions .title {
+	display: flex;
+	flex-flow: column;
+}
+
+.post .post-ingredients .title svg,
+.post .post-instructions .title svg {
+	fill: var(--blue);
+}
+post .post-ingredients .title h2,
+.post .post-instructions .title h2 {
+	font-size: xx-large;
+}

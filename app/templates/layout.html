@@ -8,7 +8,7 @@
 			rel="stylesheet"
 			href="{{ url_for('static', filename='main.css') }}"
 		/>
-		<link rel="icon" href="{{ url_for('static', filename='bear.png') }}" />
+		<link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" />
 		<link rel="stylesheet" href="https://unpkg.com/transition-style" />
 		<link
 			rel="stylesheet"
@@ -31,9 +31,10 @@
 			crossorigin
 		/>
 		<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
+		<link rel="stylesheet" href="https://unpkg.com/backdropper/dist/index.js?module" />
 
 		<title>{% block title %}{{title}}{% endblock %}</title>
 	</head>

@@ -3,6 +3,8 @@
 @import './styles/wrapperbg.css';
 @import './styles/aboutbg.css';
 @import './styles/loginbg.css';
+@import './styles/post.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 :root {
 	--screen-sm: 720px;
@@ -34,7 +36,7 @@
 }
 
 body {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: "Quicksand", 'Ubuntu', sans-serif;
 	background: black;
 }
 
@@ -70,10 +72,10 @@ dl dt {
 	flex-direction: column;
 	position: relative;
 	background: black;
-	/* background-image: url('wave-haikei.svg');
-	background-position: center;
-	background-attachment: scroll;
-	background-size: cover; */
+	background-position: top;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .content {
@@ -143,6 +145,7 @@ footer {
 	margin-top: auto;
 	position: relative;
 	z-index: 100;
+	color: var(--white);
 }
 
 /* HERO */

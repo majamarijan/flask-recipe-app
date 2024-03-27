@@ -24,9 +24,9 @@ def user():
     return render_template("user.html", title="User")
 
 
-# @public_route.get("/user/<uuid:id>")
-# def user_id(id):
-#     return f"User ID: {id}"
+@public_route.get("/user/<uuid:id>")
+def user_id(id):
+    return f"User ID: {id}"
 
 
 @public_route.get("/login")

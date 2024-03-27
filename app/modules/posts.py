@@ -6,3 +6,7 @@ def getPosts(requests, url, q):
 def getPost(requests, url, id):
   res=requests.get(url+id)
   return res.json()
+
+def getAuthor(requests, url, id):
+  res=requests.get(url+id)
+  return res.json()

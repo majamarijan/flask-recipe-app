@@ -1,5 +1,5 @@
-from flask import render_template
-from app.modules.posts import getPosts, getPost
+from flask import render_template, make_response, url_for
+from app.modules.posts import getPosts, getPost, getAuthor
 import requests
 import json
 from . import postBp
@@ -20,4 +20,8 @@ def listLink():
 @postBp.get("/post/<int:post_id>")
 def get_post(post_id):
     single_post = getPost(requests, "https://dummyjson.com/recipes/", str(post_id))
-    return render_template("post.html", title="Post", post=single_post)
+    post_author = ''
+    if(single_post):
+        post_author = getAuthor(requests, "https://dummyjson.com/users/", str(single_post.get("userId")))
+    return render_template("post.html", title="Post", post=single_post, author=post_author)
+    
