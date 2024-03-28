@@ -1,8 +1,11 @@
 import './events.js';
 import { login } from './form.js';
 import { getPosts } from './posts.js';
+import backdropper from 'https://unpkg.com/backdropper@0.1.2/dist/index.js?module'
+
 
 window.onload = () => {
+  backdropper()
   const hamburger = document.querySelector('.hamburger');
   const overlay = document.querySelector('.overlay');
   const form = document.querySelector('form');

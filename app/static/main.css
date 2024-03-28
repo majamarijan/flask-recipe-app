@@ -27,6 +27,11 @@
 	--disabled1: #8a8d91;
 	--disabled2: #bcbdc0;
 	--purple: #7f0543;
+	--z0: 0;
+	--z1: 100;
+	--z2: 200;
+	--z3: 300;
+	--z4: 400;
 }
 
 * {
@@ -36,7 +41,7 @@
 }
 
 body {
-	font-family: "Quicksand", 'Ubuntu', sans-serif;
+	font-family: 'Quicksand', 'Ubuntu', sans-serif;
 	background: black;
 }
 
@@ -65,6 +70,52 @@ dl dt {
 	padding-bottom: 12px;
 }
 
+/* colors */
+.blue {
+	background: var(--blue);
+}
+
+.green {
+	background: var(--green);
+}
+
+.orange {
+	background: var(--orange);
+}
+
+.lightblue {
+	background: var(--lightblue);
+}
+
+.yellow {
+	background: var(--yellow);
+}
+
+.white {
+	background: var(--white);
+}
+
+.black {
+	background: var(--black);
+}
+
+/* ZINDEX */
+.z1 {
+	z-index: var(--z1);
+}
+
+.z2 {
+	z-index: var(--z2);
+}
+
+.z3 {
+	z-index: var(--z3);
+}
+
+.z4 {
+	z-index: var(--z4);
+}
+
 .wrapper {
 	color: white;
 	min-height: 100vh;
@@ -78,7 +129,7 @@ dl dt {
 	background-repeat: no-repeat;
 }
 
-.content {
+.wrapper .content {
 	max-width: 850px;
 	margin: 0 auto;
 	transition: filter 0.8s ease-in-out;

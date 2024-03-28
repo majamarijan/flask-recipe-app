@@ -16,6 +16,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
 	gap: 12px;
 	justify-content: center;
+	padding: 12px;
 }
 
 .posts a {
@@ -64,6 +65,28 @@
 
 .posts .card:hover .card-image h3 {
 	border-bottom: 4px solid var(--yellow);
+}
+
+.posts .card .tags {
+	position: absolute;
+	top: 0;
+	left: 0;
+	list-style: none;
+	display: flex;
+	flex-flow: row wrap;
+	font-size: small;
+	right: 0;
+	background: var(--primary);
+	padding-inline: 12px;
+	padding-block: 4px;
+	gap: 8px;
+	opacity: 0.7;
+}
+
+.posts .card .tags li {
+	color: var(--white);
+	font-family: 'Ubuntu Mono', monospace;
+	text-transform: lowercase;
 }
 
 .posts .card-body {
@@ -128,7 +151,13 @@
 }
 
 @media all and (max-width: 420px) {
+	.posts .card {
+		min-width: 100px;
+	}
 	.posts a {
 		place-self: start;
+	}
+	.posts a .card-body {
+		display: none;
 	}
 }

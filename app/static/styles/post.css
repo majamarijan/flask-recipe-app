@@ -8,8 +8,13 @@
 }
 
 .post-wrapper ul {
-	list-style: none;
+	list-style: circle;
 	padding: 0;
+	max-width: 340px;
+}
+
+.post-wrapper ul li {
+	padding: 4px 0;
 }
 
 .post-wrapper .post {
@@ -21,13 +26,26 @@
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
-	flex-flow: row;
+	flex-flow: column;
 	justify-content: center;
 	align-items: center;
 	top: 100px;
 	bottom: 0;
 	z-index: 5;
 	position: sticky;
+}
+
+.post-wrapper .post-header .author {
+	padding: 4px 12px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(8px);
+}
+
+.post-wrapper .post-header .author img {
+	object-fit: cover;
+	border-radius: 100%;
 }
 
 .post-wrapper .post-header h1 {
@@ -38,50 +56,60 @@
 	font-size: clamp(1.3rem, 5vw, 3.23rem);
 }
 
-.post .post-ingredients,
-.post .post-instructions {
+.post-header .time {
+	display: flex;
+	flex-flow: row;
+	background: var(--gray);
+	align-items: center;
+	padding: 4px 12px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.post-header .time svg path {
+	fill: var(--white);
+}
+
+.post-content {
+	padding-inline: 24px;
+	min-height: 100vh;
+	position: sticky;
+	bottom: 0;
+	top: 100px;
+}
+
+.post-content .text-wrapper {
+	max-width: var(--screen-md);
 	display: flex;
 	flex-flow: row wrap;
 	gap: 48px;
 	align-items: center;
 	justify-content: center;
 	align-content: center;
-	padding-inline: 24px;
+	min-height: 100vh;
+	margin-inline: auto;
+	padding-bottom: 24px;
 }
 
-.post .post-ingredients {
-	height: 100vh;
-	position: sticky;
-	bottom: 0;
-	top: 100px;
-	background: var(--lightblue);
-	z-index: 200;
+.post-content .text-wrapper.last {
+	padding-top: 200px;
 }
 
-.post .post-ingredients h1 {
-	font-size: larger;
+.post-content .text-wrapper h2 {
+	font-size: clamp(1.3rem, 5vw, 2.4rem);
 }
 
-.post .post-instructions {
-	z-index: 300;
-	background: var(--black);
-	height: 100vh;
-	position: sticky;
-	bottom: 0;
-	top: 100px;
-}
-
-.post .post-ingredients .title,
-.post .post-instructions .title {
+.post-content .title {
 	display: flex;
 	flex-flow: column;
 }
 
-.post .post-ingredients .title svg,
-.post .post-instructions .title svg {
-	fill: var(--blue);
+.post-content .text-wrapper svg {
+	fill: var(--lightblue);
 }
-post .post-ingredients .title h2,
-.post .post-instructions .title h2 {
-	font-size: xx-large;
+
+.post-content .text-wrapper img {
+	max-width: 100%;
+	min-width: 150px;
+	border-radius: 100%;
 }
