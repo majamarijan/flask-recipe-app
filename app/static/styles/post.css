@@ -7,6 +7,68 @@
 	top: 0;
 }
 
+.post-wrapper .top-line {
+	position: fixed;
+	top: auto;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(12px);
+	color: var(--light);
+	font-size: clamp(0.8rem, 5vw, 1rem);
+	z-index: 500;
+	padding: 6px 48px;
+	gap: 24px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.top-line .post-info {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 8px;
+}
+
+.top-line .time,
+.top-line .calories,
+.top-line .cuisine {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	border-radius: 24px;
+	padding-inline: 12px;
+	gap: 4px;
+}
+
+.top-line .time {
+	background: var(--green);
+}
+
+.top-line .time svg path {
+	fill: var(--white);
+}
+
+.top-line .calories {
+	background: var(--red);
+}
+
+.top-line .cuisine {
+	background: var(--primary);
+}
+
+.top-line .back {
+	font-weight: bold;
+	position: relative;
+	transition: .3s ease-in-out;
+}
+
+.top-line .back:hover {
+	cursor: pointer;
+	color: var(--orange);
+	text-decoration: underline;
+}
+
 .post-wrapper ul {
 	list-style: circle;
 	padding: 0;
@@ -18,7 +80,6 @@
 }
 
 .post-wrapper .post {
-	min-height: 300vh;
 	position: relative;
 }
 
@@ -35,39 +96,23 @@
 	position: sticky;
 }
 
-.post-wrapper .post-header .author {
-	padding: 4px 12px;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	background: rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(8px);
-}
-
-.post-wrapper .post-header .author img {
-	object-fit: cover;
-	border-radius: 100%;
-}
-
-.post-wrapper .post-header h1 {
+.post-wrapper .post-header .header-title {
 	background: rgba(6, 6, 6, 0.78);
 	backdrop-filter: blur(8px);
 	text-align: center;
 	padding: 2rem 48px;
 	font-size: clamp(1.3rem, 5vw, 3.23rem);
-}
-
-.post-header .time {
 	display: flex;
-	flex-flow: row;
-	background: var(--gray);
-	align-items: center;
-	padding: 4px 12px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+	flex-flow: column;
+	border-radius: 4px;
 }
 
-.post-header .time svg path {
-	fill: var(--white);
+.post-wrapper .post-header .header-title h1 {
+	padding-bottom: 12px;
+}
+
+.post-wrapper .post-header .header-title .author {
+	font-size: clamp(0.68rem, 5vw, 0.9rem);
 }
 
 .post-content {
@@ -93,6 +138,13 @@
 
 .post-content .text-wrapper.last {
 	padding-top: 200px;
+	position: relative;
+}
+
+.post-content .text-wrapper.last .up {
+	position: absolute;
+	bottom: 20px;
+	color: var(--white);
 }
 
 .post-content .text-wrapper h2 {

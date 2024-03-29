@@ -116,6 +116,33 @@ dl dt {
 	z-index: var(--z4);
 }
 
+/* BUTTONS */
+button {
+	padding: 12px 24px;
+	border-radius: 8px;
+	border: none;
+	background: none;
+	outline: none;
+	font-size: clamp(0.8rem, 5vw, 1rem);
+	font-weight: bold;
+	transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button.primary {
+	color: var(--primary);
+	outline: 3px solid var(--yellow);
+}
+
+button.secondary {
+	background: white;
+	color: var(--blue);
+}
+
+/* WRAPPER */
 .wrapper {
 	color: white;
 	min-height: 100vh;
