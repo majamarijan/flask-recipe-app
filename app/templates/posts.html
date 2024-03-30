@@ -1,12 +1,11 @@
 {% extends "layout.html" %} {% block main %} {% import
-"components/dropdown.html" as dropdown %} {% import "components/search.html" as
-search %}
+"components/dropdown.html" as dropdown %}
 <div class="posts-page">
 	<h1><i class="fa-brands fa-blogger"></i>Posts</h1>
 
 	<div class="posts-wrapper">
 		<div class="posts-sidebar">
-			{{ search.searchBar() }}
+			{% include 'components/search.html' %}
 			<h3>Choose cuisine</h3>
 			{{ dropdown.cuisineDropdown(posts) }}
 			<h3>Ratings</h3>

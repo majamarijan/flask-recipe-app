@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 :root {
 	--screen-sm: 720px;
 	--screen-md: 968px;
@@ -183,7 +182,7 @@ header {
 
 /* MAIN */
 main {
-	padding: 4rem 48px;
+	/* padding: 4rem 48px; */
 	/* animation: circle-in-center 3s both; */
 }
 
@@ -494,7 +493,7 @@ nav .hamburger.active {
 }
 
 /* FORM */
-form {
+.loginForm {
 	padding: 24px;
 	display: flex;
 	flex-flow: column;
@@ -503,7 +502,7 @@ form {
 	background: rgb(17, 17, 17);
 }
 
-form .form-item {
+.loginForm .form-item {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
@@ -512,7 +511,7 @@ form .form-item {
 	padding: 12px 0;
 }
 
-form [type='submit'] {
+.loginForm [type='submit'] {
 	margin-top: 24px;
 	border: none;
 	border-radius: 8px;
@@ -522,11 +521,11 @@ form [type='submit'] {
 	padding: 12px 10px;
 }
 
-form input:not([type='submit']) {
+.loginForm input:not([type='submit']) {
 	padding-inline: 2px;
 }
 
-form [type='submit']:hover {
+.loginForm [type='submit']:hover {
 	cursor: pointer;
 	background-color: rgb(219, 60, 2);
 	outline: rgb(233, 233, 233) solid 1px;
