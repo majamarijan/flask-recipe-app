@@ -5,12 +5,15 @@
 @import './styles/loginbg.css';
 @import './styles/post.css';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 :root {
 	--screen-sm: 720px;
 	--screen-md: 968px;
 	--screen-lg: 1200px;
 	--primary: #002233;
+	--primary-hover: #023650;
 	--secondary: #680e4b;
 	--light: #e0e0e2;
 	--yellow: #ff9505;

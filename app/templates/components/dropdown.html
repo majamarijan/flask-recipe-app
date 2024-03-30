@@ -1,0 +1,28 @@
+{% macro cuisineDropdown(posts) %} {% set cuisines = [] %} {% for post in posts
+%} {% if post.cuisine not in cuisines %} {% set cuisines =
+cuisines.append(post.cuisine) %} {% endif %} {% endfor %} 
+<div class="select dropdown">
+	<select>
+		{% for cuisine in cuisines %}
+		<option value="{{cuisine}}">{{cuisine}}</option>
+		{% endfor %}
+	</select>
+</div>
+{% endmacro %}
+
+
+{% macro ratingDropdown(posts) %}
+{% set ratings = [] %}
+{% for post in posts %}
+{% if post.rating not in ratings %}
+{% set ratings = ratings.append(post.rating) %}
+{% endif %}
+{% endfor %}
+<div class="ratings dropdown">
+	<select>
+		{% for rating in ratings %}
+		<option value="{{rating}}">{{rating}}</option>
+		{% endfor %}
+	</select>
+</div>
+{% endmacro %}

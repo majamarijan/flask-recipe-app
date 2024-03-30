@@ -1,3 +1,7 @@
+.posts-page {
+	padding-inline: 48px;
+}
+
 .posts-wrapper {
 	display: grid;
 	grid-template-columns: 220px repeat(auto-fit, minmax(550px, 1fr));
@@ -8,7 +12,31 @@
 
 .posts-wrapper .posts-sidebar {
 	position: relative;
-	padding: 0;
+	padding: 12px;
+}
+
+.posts-wrapper .posts-sidebar .dropdown {
+	display: flex;
+	justify-content: stretch;
+}
+
+.posts-sidebar .dropdown select {
+	flex: 1;
+	border: none;
+	outline: 1px solid var(--gray);
+	border-radius: 6px;
+	padding: 6px 4px;
+	background: var(--primary);
+	color: var(--light);
+	font-size: 0.8rem;
+	font-weight: 700;
+	position: relative;
+}
+
+.posts-sidebar .select select:hover,
+.posts-sidebar .select select:focus {
+	cursor: pointer;
+	background: var(--primary-hover);
 }
 
 .posts {
@@ -16,7 +44,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(220px, auto));
 	gap: 12px;
 	justify-content: center;
-	padding: 12px;
+	padding-top: 12px;
 }
 
 .posts a {
@@ -94,7 +122,9 @@
 }
 
 .posts .card-title {
-	font-family: cursive;
+	font-family: 'Noto Serif', serif;
+	font-style: italic;
+	font-weight: 300;
 }
 
 .posts .card-info {

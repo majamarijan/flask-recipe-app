@@ -60,7 +60,12 @@
 .top-line .back {
 	font-weight: bold;
 	position: relative;
-	transition: .3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	color: var(--white);
+}
+
+.top-line .back i {
+	transform: scale(1.2);
 }
 
 .top-line .back:hover {

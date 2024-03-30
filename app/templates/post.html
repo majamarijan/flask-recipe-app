@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
-<div id="top"></div>
 {% block main %}
 <div class="post-wrapper" style="background-image: url({{post.image}})">
 	<div class="post">
 		<div class="top-line">
-			<div class="back" onclick="window.location.href = '/posts'"><i class="fa-solid fa-arrow-left"></i></div>
+			<div class="back" onclick="window.location.href = '/posts'"><i class="fa-solid fa-circle-arrow-left"></i></div>
 			<div class="post-info">
 				<span class="cuisine" title="Cuisine {{post.cuisine}}">
 					<i class="fa-solid fa-utensils"></i>
@@ -88,7 +87,7 @@
 			<div class="text-wrapper last">
 				<h2>Enjoy!</h2>
 				<img src="{{post.image}}" alt="recipe image" width="300" />
-				<a href="#top" class="up"
+				<a href="#" class="up"
 					><i class="fa-solid fa-circle-arrow-up"></i
 				></a>
 			</div>
