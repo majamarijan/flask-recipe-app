@@ -1,14 +1,19 @@
 import './events.js';
 import { login } from './form.js';
 import { getPosts } from './posts.js';
-import backdropper from 'https://unpkg.com/backdropper@0.1.2/dist/index.js?module'
-
+import backdropper from 'https://unpkg.com/backdropper@0.1.2/dist/index.js?module';
+import { Dropdown } from 'https://esm.sh/flowbite';
+import { dropdown } from './dropdown.js';
 
 window.onload = () => {
   backdropper()
   const hamburger = document.querySelector('.hamburger');
   const overlay = document.querySelector('.overlay');
   const form = document.querySelector('form');
+  dropdown(Dropdown);
+
+
+
   if (form) {
     form.onsubmit = ((e) => {
       e.preventDefault();

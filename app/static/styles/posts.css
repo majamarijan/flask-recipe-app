@@ -13,30 +13,23 @@
 .posts-wrapper .posts-sidebar {
 	position: relative;
 	padding: 12px;
-}
-
-.posts-wrapper .posts-sidebar .dropdown {
+	border: 2px solid white;
 	display: flex;
+	flex-direction: column;
 	justify-content: stretch;
 }
 
-.posts-sidebar .dropdown select {
-	flex: 1;
-	border: none;
-	outline: 1px solid var(--gray);
-	border-radius: 6px;
-	padding: 6px 4px;
-	background: var(--primary);
-	color: var(--light);
-	font-size: 0.8rem;
-	font-weight: 700;
-	position: relative;
+.posts-sidebar .dropdownButton {
+	display: flex;
+	justify-content: space-between;
 }
 
-.posts-sidebar .select select:hover,
-.posts-sidebar .select select:focus {
-	cursor: pointer;
-	background: var(--primary-hover);
+.posts-sidebar .dropdownMenu ul {
+	background: var(--black);
+}
+
+.posts-sidebar .dropdownMenu ul li a:hover {
+	background: var(--gray);
 }
 
 .posts {

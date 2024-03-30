@@ -1,28 +1,98 @@
 {% macro cuisineDropdown(posts) %} {% set cuisines = [] %} {% for post in posts
 %} {% if post.cuisine not in cuisines %} {% set cuisines =
-cuisines.append(post.cuisine) %} {% endif %} {% endfor %} 
-<div class="select dropdown">
-	<select>
+cuisines.append(post.cuisine) %} {% endif %} {% endfor %}
+<button
+	id="cuisineButton"
+	data-dropdown-toggle="dropdown"
+	class="dropdownButton text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+	type="button"
+>
+	<span>Select cuisine</span>
+	<svg
+		class="w-2.5 h-2.5 ms-3"
+		aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 10 6"
+	>
+		<path
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			d="m1 1 4 4 4-4"
+		/>
+	</svg>
+</button>
+
+<!-- Dropdown menu -->
+<div
+	id="cuisineDropdown"
+	class="dropdownMenu hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+>
+	<ul
+		class="py-2 text-sm text-gray-700 dark:text-gray-200"
+		aria-labelledby="dropdownDefaultButton"
+	>
 		{% for cuisine in cuisines %}
-		<option value="{{cuisine}}">{{cuisine}}</option>
+		<li>
+			<a
+				href="#"
+				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+				>{{cuisine}}</a
+			>
+		</li>
 		{% endfor %}
-	</select>
+	</ul>
 </div>
-{% endmacro %}
 
+{% endmacro %} {% macro ratingDropdown(posts) %} {% set ratings = [] %} {% for
+post in posts %} {% if post.rating not in ratings %} {% set ratings =
+ratings.append(post.rating) %} {% endif %} {% endfor %}
 
-{% macro ratingDropdown(posts) %}
-{% set ratings = [] %}
-{% for post in posts %}
-{% if post.rating not in ratings %}
-{% set ratings = ratings.append(post.rating) %}
-{% endif %}
-{% endfor %}
-<div class="ratings dropdown">
-	<select>
+<button
+	id="ratingButton"
+	data-dropdown-toggle="dropdown"
+	class="dropdownButton text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+	type="button"
+>
+	<span>Select rating</span>
+	<svg
+		class="w-2.5 h-2.5 ms-3"
+		aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 10 6"
+	>
+		<path
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			d="m1 1 4 4 4-4"
+		/>
+	</svg>
+</button>
+
+<!-- Dropdown menu -->
+<div
+	id="ratingDropdown"
+	class="dropdownMenu hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+>
+	<ul
+		class="py-2 text-sm text-gray-700 dark:text-gray-200"
+		aria-labelledby="dropdownDefaultButton"
+	>
 		{% for rating in ratings %}
-		<option value="{{rating}}">{{rating}}</option>
+		<li>
+			<a
+				href="#"
+				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+				>{{rating}}</a
+			>
+		</li>
 		{% endfor %}
-	</select>
+	</ul>
 </div>
+
 {% endmacro %}
