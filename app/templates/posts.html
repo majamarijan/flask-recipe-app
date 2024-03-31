@@ -19,13 +19,12 @@
 		</div>
 		<div class="posts">
 			{% for post in posts %}
-			<a href="{{url_for('posts.get_post', post_id=post.id)}}">
-				<div
-					class="card"
-					id="{{post.id}}"
+			<a href="{{url_for('posts.get_post', post_id=post.id)}}" id="card-{{post.id}}"
 					data-name="{{post.name}}"
 					data-rating="{{post.rating}}"
-					data-cuisine="{{post.cuisine}}"
+					data-cuisine="{{post.cuisine}}">
+				<div
+					class="card"
 				>
 					<div class="card-image">
 						<img src="{{post.image}}" alt="{{post.name}}" width="120" />

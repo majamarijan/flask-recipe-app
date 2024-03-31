@@ -8,7 +8,8 @@ export function dropdown(Dropdown) {
   const cuisineMenu = document.getElementById('cuisineDropdown');
   const cuisineDD = new Dropdown(cuisineMenu, cuisineBtn);
   const search = document.getElementById('searchForm');
-  const cards = Array.from(document.querySelectorAll('.posts .card'));
+  const cards = Array.from(document.querySelectorAll('.posts [id^=card-]'));
+  console.log(cards)
   const posts = document.querySelector('.posts');
 
   handleDropdown(ratingDD, ratingBtn, ratingMenu, cards, posts, 'rating');
