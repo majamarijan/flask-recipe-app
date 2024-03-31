@@ -1,5 +1,22 @@
 .posts-page {
-	padding-right: 48px;
+	padding-inline: 48px;
+}
+
+.posts-page .posts-page__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	flex-flow: wrap;
+}
+
+.posts-page .posts-page__header #searchForm,
+.posts-wrapper .posts-sidebar .sidebar-item {
+	min-width: 150px;
+}
+
+.posts-page .posts-page__header #searchForm input {
+	padding-inline-start: 3.4rem;
 }
 
 .posts-wrapper {
@@ -11,17 +28,23 @@
 }
 
 .posts-wrapper .posts-sidebar {
-	position: sticky;
 	padding: 12px;
-	border: 2px solid white;
+	position: relative;
+	z-index: 500;
+}
+
+.posts-wrapper .posts-sidebar .sidebar-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: stretch;
+	gap: 4px;
+	padding-bottom: 24px;
 }
 
 .posts-sidebar .dropdownButton {
 	display: flex;
 	justify-content: space-between;
+	background: var(--primary);
 }
 
 .posts-sidebar .dropdownMenu ul {
@@ -144,12 +167,22 @@
 		grid-template-columns: 1fr;
 	}
 	.posts-wrapper .posts-sidebar {
-		position: sticky;
-		top: 0;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 24px;
+	}
+	.posts-wrapper .posts-sidebar .sidebar-item {
+		flex: 1;
+		max-width: 11rem;
 	}
 }
 
 @media all and (max-width: 680px) {
+	.posts-page {
+		padding-inline: 12px;
+	}
 	.posts {
 		grid-template-columns: 1fr;
 	}
@@ -170,6 +203,22 @@
 
 	.posts .card {
 		min-width: 320px;
+	}
+
+	.posts-page .posts-page__header {
+		flex-direction: column;
+	}
+
+	.posts-page .posts-page__header #searchForm {
+		align-self: stretch;
+	}
+
+	.posts-wrapper .posts-sidebar {
+		justify-content: center;
+		gap: 24px;
+	}
+	.posts-wrapper .posts-sidebar .sidebar-item {
+		padding-bottom: 0;
 	}
 }
 

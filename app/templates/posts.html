@@ -1,15 +1,22 @@
 {% extends "layout.html" %} {% block main %} {% import
 "components/dropdown.html" as dropdown %}
 <div class="posts-page">
-	<h1><i class="fa-brands fa-blogger"></i>Posts</h1>
-
+	<div class="posts-page__header">
+		<h1><i class="fa-brands fa-blogger"></i>Posts</h1>
+	{% include 'components/search.html' %}
+	</div>
+	
 	<div class="posts-wrapper">
 		<div class="posts-sidebar">
-			{% include 'components/search.html' %}
-			<h3>Choose cuisine</h3>
+			<div class="sidebar-item">
+				<h3>Cuisine</h3>
 			{{ dropdown.cuisineDropdown(posts) }}
-			<h3>Ratings</h3>
+			</div>
+			<div class="sidebar-item">
+				<h3>Ratings</h3>
 			{{dropdown.ratingDropdown(posts)}}
+			</div>
+			
 		</div>
 		<div class="posts">
 			{% for post in posts %}
