@@ -3,25 +3,30 @@
 <div class="posts-page">
 	<div class="posts-page__header">
 		<h1><i class="fa-brands fa-blogger"></i>Posts</h1>
-	{% include 'components/search.html' %}
+		{% include 'components/search.html' %}
 	</div>
-	
+
 	<div class="posts-wrapper">
 		<div class="posts-sidebar">
 			<div class="sidebar-item">
 				<h3>Cuisine</h3>
-			{{ dropdown.cuisineDropdown(posts) }}
+				{{ dropdown.cuisineDropdown(posts) }}
 			</div>
 			<div class="sidebar-item">
 				<h3>Ratings</h3>
-			{{dropdown.ratingDropdown(posts)}}
+				{{dropdown.ratingDropdown(posts)}}
 			</div>
-			
 		</div>
 		<div class="posts">
 			{% for post in posts %}
 			<a href="{{url_for('posts.get_post', post_id=post.id)}}">
-				<div class="card">
+				<div
+					class="card"
+					id="{{post.id}}"
+					data-name="{{post.name}}"
+					data-rating="{{post.rating}}"
+					data-cuisine="{{post.cuisine}}"
+				>
 					<div class="card-image">
 						<img src="{{post.image}}" alt="{{post.name}}" width="120" />
 						<ul class="tags">
@@ -31,7 +36,7 @@
 							<li>| {{tag}}</li>
 							{% endif %} {% endfor %}
 						</ul>
-						<h3>{{post.name}}</h3>
+						<h3 class="post-name">{{post.name}}</h3>
 					</div>
 					<div class="card-body">
 						<div class="card-title">
@@ -45,6 +50,7 @@
 								><i class="fa-solid fa-fire-flame-curved"></i
 								>{{post.caloriesPerServing}}</span
 							>
+							<span><i class="fa-solid fa-star"></i>{{post.rating}}</span>
 						</div>
 					</div>
 				</div>
