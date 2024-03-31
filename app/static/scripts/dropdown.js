@@ -9,7 +9,6 @@ export function dropdown(Dropdown) {
   const cuisineDD = new Dropdown(cuisineMenu, cuisineBtn);
   const search = document.getElementById('searchForm');
   const cards = Array.from(document.querySelectorAll('.posts [id^=card-]'));
-  console.log(cards)
   const posts = document.querySelector('.posts');
 
   handleDropdown(ratingDD, ratingBtn, ratingMenu, cards, posts, 'rating');
@@ -32,16 +31,31 @@ async function handleDropdown(ddown, btn, menu, cards, posts, dataSet) {
 
 async function handleSearchForm(form, cards, posts) {
   form.oninput = (e) => {
+    console.log(e.target.value)
     filterResult(cards, posts, e.target.value, 'name');
   }
 }
 
 
 function filterResult(arr, box, value, dataSet) {
-  if (value !== 'All') {
-    const filtered = arr.filter(item => item.dataset[dataSet].toLowerCase().includes(value.toLowerCase()));
-    box.innerHTML = '';
-    box.append(...filtered);
+  if (value !== 'All' && value !== '') {
+    if (isNaN(value)) {
+      const mapped = arr.map(item => item.dataset[dataSet].split(' '));
+      const foundItems = mapped.map((x, index) => {
+        const flt = x.filter(str => str.toLowerCase().startsWith(value.toLowerCase()))
+        if (flt.length > 0) {
+          return arr[index];
+        }
+      });
+      const result = foundItems.filter(x => x !== undefined);
+      box.innerHTML = '';
+      box.append(...result);
+    } else {
+      const filtered = arr.filter(item => item.dataset[dataSet].includes(value));
+      box.innerHTML = '';
+      box.append(...filtered);
+    }
+
   } else {
     box.append(...arr);
   }
