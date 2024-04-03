@@ -31,7 +31,6 @@ async function handleDropdown(ddown, btn, menu, cards, posts, dataSet) {
 
 async function handleSearchForm(form, cards, posts) {
   form.oninput = (e) => {
-    console.log(e.target.value)
     filterResult(cards, posts, e.target.value, 'name');
   }
 }
@@ -48,8 +47,13 @@ function filterResult(arr, box, value, dataSet) {
         }
       });
       const result = foundItems.filter(x => x !== undefined);
-      box.innerHTML = '';
-      box.append(...result);
+      if (result.length > 0) {
+        box.innerHTML = '';
+        box.append(...result);
+      } else {
+        box.innerHTML = '';
+        box.append('No results found');
+      }
     } else {
       const filtered = arr.filter(item => item.dataset[dataSet].includes(value));
       box.innerHTML = '';
@@ -57,6 +61,7 @@ function filterResult(arr, box, value, dataSet) {
     }
 
   } else {
+    box.innerHTML = '';
     box.append(...arr);
   }
 }

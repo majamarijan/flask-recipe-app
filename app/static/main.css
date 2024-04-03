@@ -47,7 +47,8 @@ body {
 	background: black;
 }
 
-a {
+a,
+.link {
 	text-decoration: none;
 	color: var(--blue);
 }
@@ -387,7 +388,8 @@ nav ul {
 	gap: 18px;
 }
 
-ul li a {
+ul li a,
+ul li .link {
 	text-decoration: none;
 	color: var(--blue);
 	position: relative;
@@ -396,12 +398,14 @@ ul li a {
 	transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-ul li a:hover {
+ul li a:hover,
+ul li .link:hover {
 	color: white;
 	cursor: pointer;
 }
 
-ul li a::before {
+ul li a::before,
+ul li .link::before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -414,7 +418,8 @@ ul li a::before {
 	transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-ul li a:hover::before {
+ul li a:hover::before,
+ul li .link:hover::before {
 	transform: scaleX(1);
 }
 
@@ -442,6 +447,7 @@ nav .hamburger.active {
 	flex-flow: column nowrap;
 	gap: 24px;
 	align-items: center;
+	min-height: 80vh;
 }
 .errorPage h1 {
 	font-size: 12rem;

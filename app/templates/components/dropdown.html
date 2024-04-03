@@ -34,16 +34,17 @@ cuisines.append(post.cuisine) %} {% endif %} {% endfor %}
 		class="py-2 text-sm text-gray-700 dark:text-gray-200"
 		aria-labelledby="dropdownDefaultButton"
 	>
-	<li>
-		<a
-				href="#"
-				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-				>All</a>
-	</li>
-		{% for cuisine in cuisines %}
 		<li>
 			<a
 				href="#"
+				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+				>All</a
+			>
+		</li>
+		{% for cuisine in cuisines %}
+		<li>
+			<a
+			href="#"
 				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
 				>{{cuisine}}</a
 			>
@@ -89,12 +90,13 @@ ratings.append(post.rating) %} {% endif %} {% endfor %}
 		class="py-2 text-sm text-gray-700 dark:text-gray-200"
 		aria-labelledby="dropdownDefaultButton"
 	>
-	<li>
-		<a
+		<li>
+			<a
 				href="#"
 				class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-				>All</a>
-	</li>
+				>All</a
+			>
+		</li>
 		{% for rating in ratings %}
 		<li>
 			<a
