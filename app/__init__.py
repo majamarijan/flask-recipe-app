@@ -38,6 +38,9 @@ def create_app():
   def not_found(error):
     return render_template("error.html", error=error), 404
 
+  if __name__ == "__main__":
+      app.run(host="127.0.0.1", port=5000, debug=True)
+
   return app
   
     
