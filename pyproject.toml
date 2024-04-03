@@ -6,6 +6,15 @@ authors = ["majamarijan <majapianist@gmail.com>"]
 readme = "README.md"
 packages = [{include = "app"}]
 
+
+[tool.poetry.scripts]
+start = "app:main"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/majamarijan/starterFlask"
+"Bug Tracker" = "https://github.com/majamarijan/starterFlask/issues"
+
+
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.2"
