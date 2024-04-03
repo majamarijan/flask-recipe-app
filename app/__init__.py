@@ -8,8 +8,9 @@ from dotenv import dotenv_values
 import sys
 import time
 import logging
+import os
 
-
+PORT = int(os.environ.get("PORT", 5000))
 # load_dotenv()  # take environment variables from .env.
 config = dotenv_values(".env")
 # print(config.get("DOMAIN_URL"))
@@ -39,7 +40,7 @@ def create_app():
     return render_template("error.html", error=error), 404
 
   if __name__ == "__main__":
-      app.run(host="127.0.0.1", port=5000, debug=True)
+      app.run(host="0.0.0.0", port=PORT, debug=True)
 
   return app
   
