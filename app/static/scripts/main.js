@@ -1,18 +1,15 @@
 import './events.js';
 import { login } from './form.js';
-import { getPosts } from './posts.js';
-import backdropper from 'https://unpkg.com/backdropper@0.1.2/dist/index.js?module';
 import { Dropdown } from 'https://esm.sh/flowbite';
 import { dropdown } from './dropdown.js';
+import { hamburgerMenu } from './hamburger.js';
 
 window.onload = () => {
-  backdropper()
-  const hamburger = document.querySelector('.hamburger');
-  const overlay = document.querySelector('.overlay');
   const form = document.querySelector('form');
-  dropdown(Dropdown);
 
-
+  if(window.innerWidth < 720) {
+    hamburgerMenu();
+  }
 
   if (form) {
     form.onsubmit = ((e) => {
@@ -20,22 +17,6 @@ window.onload = () => {
       login();
     })
   }
-  // if (window.location.href.includes('posts')) {
-  //   getPosts();
-  // }
-  hamburger.onclick = () => {
-    hamburger.classList.toggle('active');
-    if (overlay) overlay.style.zIndex = 500;
-    if (hamburger.classList.contains('active')) {
-      overlay.classList.add('overlay-animate');
-      overlay.classList.remove('overlay-animate-back');
-      document.querySelector('.mobileMenu').style.display = 'block';
-    } else {
-      overlay.classList.remove('overlay-animate');
-      overlay.classList.add('overlay-animate-back');
-      document.querySelector('.mobileMenu').style.display = 'none';
-    }
-  };
   const links = document.querySelectorAll('header nav a');
   let stateArr = new Set();
   links.forEach((link, index) => {
@@ -50,11 +31,9 @@ window.onload = () => {
       //     console.log(e.state);
     }
   })
-  console.log(window.history.state)
 
   if (window.location.href.includes('post')) {
-    // const img = document.querySelector('#post-image');
-    // document.querySelector('.wrapper').style.backgroundImage = `url(${img.src})`;
     document.querySelector('main').style.padding = '0px';
+    dropdown(Dropdown);
   }
 };

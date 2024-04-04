@@ -428,7 +428,7 @@ nav .hamburger {
 	color: teal;
 	transition: transform 0.3s ease-in-out;
 	position: relative;
-	z-index: 1000;
+	z-index: 3000;
 }
 
 nav .hamburger:hover {
@@ -472,7 +472,7 @@ nav .hamburger.active {
 	font-size: 1.3rem;
 	position: relative;
 	inset: 0;
-	z-index: 1000;
+	z-index: 0;
 	display: none;
 }
 .mobileMenu nav {

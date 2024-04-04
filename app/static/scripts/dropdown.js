@@ -10,7 +10,7 @@ export function dropdown(Dropdown) {
   const search = document.getElementById('searchForm');
   const cards = Array.from(document.querySelectorAll('.posts [id^=card-]'));
   const posts = document.querySelector('.posts');
-
+  
   handleDropdown(ratingDD, ratingBtn, ratingMenu, cards, posts, 'rating');
   handleDropdown(cuisineDD, cuisineBtn, cuisineMenu, cards, posts, 'cuisine');
   handleSearchForm(search, cards, posts);
@@ -61,7 +61,7 @@ function filterResult(arr, box, value, dataSet) {
     }
 
   } else {
-    box.innerHTML = '';
+    box.innerHTML = ''
     box.append(...arr);
   }
 }
