@@ -236,23 +236,29 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 48px;
+	padding-top:4rem;
 	transition: all 0.3s ease-in-out;
 }
 
-.hero img {
-	width: 80%;
+.hero .picture_wrapper {
 	flex: 1;
-	min-width: 450px;
-	object-fit: contain;
+	width: 100%;
 	border-radius: 100%;
 	transform-origin: center;
 	transform: translate(0, 0);
 	transition: 0.4s ease-in-out;
 	animation: bounceInRight;
 	animation-duration: 1s;
+	max-width:450px;
 }
 
-.hero img:hover {
+.hero .picture_wrapper img {
+	width:80%;
+	object-fit: contain;
+	margin: 0 auto;
+}
+
+.hero .picture_wrapper:hover {
 	transform: scale(1.1);
 }
 
@@ -543,7 +549,7 @@ nav .hamburger.active {
 	.hero {
 		flex-direction: column;
 	}
-	.hero img {
+	.hero .picture_wrapper img {
 		width: 100%;
 		min-width: 0;
 	}

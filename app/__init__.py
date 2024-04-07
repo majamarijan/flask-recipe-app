@@ -8,7 +8,10 @@ from dotenv import dotenv_values
 import sys
 import time
 import logging
-import os
+import os, sys
+from PIL import Image
+
+print(sys.argv[1])
 
 
 PORT = int(os.environ.get("PORT", 5000))

@@ -1,6 +1,8 @@
-export async function hamburgerMenu() {
+export function hamburgerMenu() {
   const hamburger = document.querySelector('.hamburger');
   const overlay = document.querySelector('.overlay');
+
+  console.log(hamburger)
   hamburger.onclick = () => {
     hamburger.classList.toggle('active');
     if (hamburger.classList.contains('active')) {

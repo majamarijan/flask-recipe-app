@@ -11,3 +11,7 @@ SETUP PROJECT
 //for existing PROJECT
 9. poetry init
 10. poetry run flask app --debug run
+
+
+//RUN
+gunicorn -m 4 main:app

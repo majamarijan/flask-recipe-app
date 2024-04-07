@@ -15,11 +15,22 @@
 			</p>
 			<button>Get Started</button>
 		</div>
-		<img
-			src="{{ url_for('static', filename='computer.png') }}"
-			alt="Flask"
-			transition-style="in:circle:center"
-			loading="lazy"
-		/>
+		<div class="picture_wrapper" transition-style="in:circle:center">
+			<picture>
+			<source
+				srcset="{{ url_for('static', filename='computer.webp') }}"
+				media="(min-width: 320px)"
+			/>
+			<source
+				srcset="{{ url_for('static', filename='computer-2.png') }}"
+				media="(max-width: 320px)"
+			/>
+			<img
+				src="{{ url_for('static', filename='computer-1.png') }}"
+				alt="Flask"
+			/>
+		</picture>
+		</div>
+		
 	</div>
 </div>
