@@ -11,7 +11,6 @@ import logging
 import os, sys
 from PIL import Image
 
-print(sys.argv[1])
 
 
 PORT = int(os.environ.get("PORT", 5000))

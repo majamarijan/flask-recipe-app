@@ -16,20 +16,13 @@
 			<button>Get Started</button>
 		</div>
 		<div class="picture_wrapper" transition-style="in:circle:center">
-			<picture>
-			<source
-				srcset="{{ url_for('static', filename='computer.webp') }}"
-				media="(min-width: 320px)"
-			/>
-			<source
-				srcset="{{ url_for('static', filename='computer-2.png') }}"
-				media="(max-width: 320px)"
-			/>
 			<img
-				src="{{ url_for('static', filename='computer-1.png') }}"
+				src="{{ url_for('static', filename='pizza.png') }}"
+				srcset="{{ url_for('static', filename='pizza.png')}}, {{ url_for('static', filename='pizza2x.webp')}} 1.5x"
 				alt="Flask"
+				width="450"
+				height="450"
 			/>
-		</picture>
 		</div>
 		
 	</div>

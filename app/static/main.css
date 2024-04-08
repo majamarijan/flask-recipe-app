@@ -21,6 +21,7 @@
 	--green: #0b6e4f;
 	--lightblue: #7cc6fe;
 	--blue: #347fc4;
+	--darkblue: #045E6C;
 	--black: #111318;
 	--gray: #2a2f3c;
 	--orange: #ec4e20;
@@ -183,6 +184,7 @@ header {
 
 /* MAIN */
 main {
+	width: inherit;
 	/* padding: 4rem 48px; */
 	/* animation: circle-in-center 3s both; */
 }
@@ -217,7 +219,7 @@ main {
 
 .credits img {
 	width: 100%;
-	max-width: 48px;
+	max-width: 85px;
 }
 
 footer {
@@ -236,7 +238,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 48px;
-	padding-top:4rem;
+	padding-top: 4rem;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -249,17 +251,13 @@ footer {
 	transition: 0.4s ease-in-out;
 	animation: bounceInRight;
 	animation-duration: 1s;
-	max-width:450px;
+	max-width: 450px;
 }
 
 .hero .picture_wrapper img {
-	width:80%;
+	width: 80%;
 	object-fit: contain;
 	margin: 0 auto;
-}
-
-.hero .picture_wrapper:hover {
-	transform: scale(1.1);
 }
 
 .heroText {
@@ -285,7 +283,7 @@ footer {
 	border: none;
 	border-radius: 8px;
 	padding: 8px 12px;
-	background: rgb(7, 156, 179);
+	background: var(--darkblue);
 	transition: 0.2s linear;
 	animation: bounceInLeft;
 	animation-duration: 1.3s;
