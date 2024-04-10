@@ -8,8 +8,7 @@ from dotenv import dotenv_values
 import sys
 import time
 import logging
-import os, sys
-from PIL import Image
+import os
 
 
 
@@ -26,7 +25,7 @@ def create_app():
   app = Flask(__name__, instance_relative_config=True)
 
   # add routes
-  from .routes import public_views, post_views
+  from .routes import public_views, post_views, api_views
  
   app.register_blueprint(public_views.public_route)
   app.add_url_rule("/", endpoint="index")
@@ -37,6 +36,9 @@ def create_app():
   app.register_blueprint(post_views.postBp, url_prefix='/posts')
   app.add_url_rule('/', endpoint='posts')
   app.add_url_rule('/post/<int:post_id>', endpoint='post')
+
+  app.register_blueprint(api_views.apiBp, url_prefix='/api')
+  app.add_url_rule('/', endpoint='api')
 
   @app.errorhandler(404)
   def not_found(error):

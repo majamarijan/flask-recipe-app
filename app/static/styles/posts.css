@@ -12,7 +12,7 @@
 
 .posts-page .posts-page__header #searchForm,
 .posts-wrapper .posts-sidebar .sidebar-item {
-	min-width: 150px;
+	min-width: 230px;
 }
 
 .posts-page .posts-page__header #searchForm input {
@@ -28,7 +28,7 @@
 }
 
 .posts-wrapper .posts-sidebar {
-	padding: 12px;
+	padding-block: 12px;
 	position: relative;
 	z-index: 500;
 }
@@ -88,10 +88,13 @@
 
 .posts .card-image {
 	position: relative;
+	height:220px;
+	display:flex;
+	width:100%;
 }
 
 .posts .card-image img {
-	width: 100%;
+	width:inherit;
 	object-fit: cover;
 }
 
@@ -181,7 +184,7 @@
 
 @media all and (max-width: 680px) {
 	.posts-page {
-		padding-inline: 12px;
+		padding-inline: var(--px);
 	}
 	.posts {
 		grid-template-columns: 1fr;
@@ -222,12 +225,16 @@
 	}
 }
 
-@media all and (max-width: 420px) {
+@media all and (max-width: 480px) {
+	.posts-page {
+		padding-inline:12px;
+	}
 	.posts .card {
-		min-width: 100px;
+		min-width: 80%;
 	}
 	.posts a {
-		place-self: start;
+		place-self: stretch;
+		justify-content: center;
 	}
 	.posts a .card-body {
 		display: none;

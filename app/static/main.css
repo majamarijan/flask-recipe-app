@@ -35,6 +35,10 @@
 	--z2: 200;
 	--z3: 300;
 	--z4: 400;
+	--px: 24px;
+	--px-1: 48px;
+	--py: 12px;
+	--py-1: 24px;
 }
 
 * {
@@ -72,6 +76,23 @@ dl dt {
 	font-weight: bold;
 	padding-top: 24px;
 	padding-bottom: 12px;
+}
+
+/* paddings */
+.px {
+	padding-inline: var(--px);
+}
+
+.px-1 {
+	padding-inline: var(--px-1);
+}
+
+.py {
+	padding-block: var(--py);
+}
+
+.py-1 {
+	padding-block: var(--py-1);
 }
 
 /* colors */
@@ -165,6 +186,7 @@ button.secondary {
 	margin: 0 auto;
 	transition: filter 0.8s ease-in-out;
 	position: relative;
+	padding-top: 4rem;
 	z-index: 100;
 }
 
@@ -238,7 +260,6 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 48px;
-	padding-top: 4rem;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -255,7 +276,7 @@ footer {
 }
 
 .hero .picture_wrapper img {
-	width: 80%;
+	max-width: 450px;
 	object-fit: contain;
 	margin: 0 auto;
 }
@@ -305,7 +326,6 @@ footer {
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	/* justify-content: center; */
 	content-visibility: hidden;
 	background: rgba(0, 0, 0, 0.9);
 	backdrop-filter: blur(12px);
@@ -548,8 +568,8 @@ nav .hamburger.active {
 		flex-direction: column;
 	}
 	.hero .picture_wrapper img {
-		width: 100%;
-		min-width: 0;
+		max-width: 340px;
+		width:100%;
 	}
 	.heroText {
 		text-align: center;
@@ -557,9 +577,7 @@ nav .hamburger.active {
 }
 
 @media screen and (max-width: 720px) {
-	main {
-		padding: 12px 24px;
-	}
+	
 	nav ul,
 	header nav button {
 		display: none;
@@ -574,5 +592,8 @@ nav .hamburger.active {
 
 	.overlay {
 		content-visibility: visible;
+	}
+	main .content {
+		padding-inline: var(--px);
 	}
 }
