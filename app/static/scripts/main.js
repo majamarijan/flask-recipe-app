@@ -3,7 +3,7 @@ import { login } from './form.js';
 import { Dropdown } from 'https://esm.sh/flowbite';
 import { dropdown } from './dropdown.js';
 import { hamburgerMenu } from './hamburger.js';
-import {getPosts} from './posts.js'
+import { renderPosts} from './posts.js'
 
 window.onload = () => {
   const form = document.querySelector('form');
@@ -33,9 +33,8 @@ window.onload = () => {
     }
   })
 
-  if (window.location.href.includes('post')) {
-    document.querySelector('main').style.padding = '0px';
+  if (window.location.href.includes('posts')) {
     dropdown(Dropdown);
-    getPosts().then(data=> console.log(data))
+    renderPosts()
   }
 };
