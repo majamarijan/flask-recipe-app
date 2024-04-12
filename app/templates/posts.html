@@ -1,5 +1,6 @@
 {% extends "layout.html" %} {% block main %} {% import
 "components/dropdown.html" as dropdown %}
+{% import "components/cards.html" as cards %}
 <div class="posts-page">
 	<div class="posts-page__header">
 		<h1><i class="fa-brands fa-blogger"></i>Posts</h1>
@@ -17,7 +18,10 @@
 				{{dropdown.ratingDropdown(posts)}}
 			</div>
 		</div>
-		<div class="posts"></div>
+		<div class="posts">
+			
+			{{cards.postCards(posts)}}
+		</div>
 		
 		{% endblock %}
 		

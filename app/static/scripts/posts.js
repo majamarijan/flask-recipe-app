@@ -6,7 +6,6 @@ async function getPosts() {
 
 export async function renderPosts() {
   const posts = document.querySelector('.posts');
-  console.log('render')
   posts.innerHTML = 'loading...';
   getPosts().then(data => {
     posts.innerHTML = '';

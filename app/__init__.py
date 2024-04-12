@@ -9,21 +9,25 @@ import sys
 import time
 import logging
 import os
-
-
+from datetime import datetime
+from app.mainCache import cache
 
 PORT = int(os.environ.get("PORT", 5000))
 # load_dotenv()  # take environment variables from .env.
 config = dotenv_values(".env")
 # print(config.get("DOMAIN_URL"))
-
+CACHE_CONFIG = {
+  "CACHE_TYPE": "SimpleCache",
+  "CACHE_DEFAULT_TIMEOUT": 120,
+  "DEBUG": True
+}
 # make application factory
 # this file __init__.py contains the application factory and tells that the app folder is a package
 
 def create_app():
   # instance_relative_config=True: load config from instance folder
   app = Flask(__name__, instance_relative_config=True)
-
+  cache.init_app(app, config=CACHE_CONFIG)
   # add routes
   from .routes import public_views, post_views, api_views
  
@@ -32,6 +36,7 @@ def create_app():
   app.add_url_rule("/about", endpoint="about")
   app.add_url_rule('/user', endpoint='user')
   app.add_url_rule('/login', endpoint='login')
+  
 
   app.register_blueprint(post_views.postBp, url_prefix='/posts')
   app.add_url_rule('/', endpoint='posts')
@@ -40,6 +45,12 @@ def create_app():
   app.register_blueprint(api_views.apiBp, url_prefix='/api')
   app.add_url_rule('/', endpoint='api')
 
+
+  @app.get('/timer')
+  @cache.cached(timeout=10)
+  def timer():
+    return jsonify({'time': datetime.now()})
+  
   @app.errorhandler(404)
   def not_found(error):
     return render_template("error.html", error=error), 404

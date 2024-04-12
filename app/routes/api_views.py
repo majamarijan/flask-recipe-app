@@ -7,12 +7,12 @@ from PIL import Image
 from urllib.request import urlopen
 import base64
 import os
+from app.mainCache import cache
 
 @apiBp.get("/posts")
 def posts():
-  postList = getPosts(requests, "https://dummyjson.com/recipes", "?limit=10").get(
-        "recipes"
-  )
+  postList = getPosts(requests, "https://dummyjson.com/recipes", "?limit=10").get("recipes")
+  
   if not os.path.isdir("app/static/images/thumbnails"):
     os.mkdir('app/static/images/thumbnails')
     
@@ -32,6 +32,7 @@ def posts():
       
       im = Image.open("app/static/images/thumbnails/" + img_name)
       # update post with thumbnail
-      post.update({"thumbnail": url_for('static', filename='images/thumbnails/' + img_name)})
+      post.update({"thumbnail": img_name})
     
   return jsonify(postList)
+  

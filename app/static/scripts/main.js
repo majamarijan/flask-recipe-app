@@ -35,6 +35,6 @@ window.onload = () => {
 
   if (window.location.href.includes('posts')) {
     dropdown(Dropdown);
-    renderPosts()
+    // renderPosts()
   }
 };
