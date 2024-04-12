@@ -5,42 +5,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="Description" content="Flask Blog App" />
+		<meta http-equiv="Cache-control" content={{ cacheControl }} />
 		<link
 			href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
 			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static', filename='main.css') }}"
-		/>
-		<link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" />
-		<link rel="stylesheet" href="https://unpkg.com/transition-style" />
-		<link
+			/>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" />
+			<link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" />
+			<link rel="stylesheet" href="https://unpkg.com/transition-style" />
+			<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
 			crossorigin
-		/>
-		<link
+			/>
+			<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
 			crossorigin
-		/>
-		<link
+			/>
+			<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css"
 			crossorigin
-		/>
-		<link
+			/>
+			<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"
 			crossorigin
-		/>
-		<link
+			/>
+			<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 			crossorigin
-		/>
-		<script
+			/>
+			<link rel="stylesheet" href="{{ url_for('static', filename='styles/minify/wrapperbg.min.css') }}" />
+			<link rel="stylesheet" href="{{ url_for('static', filename='styles/minify/aboutbg.min.css') }}" />
+			<link rel="stylesheet" href="{{ url_for('static', filename='styles/minify/loginbg.min.css') }}" />
+			<link rel="stylesheet" href="{{ url_for('static', filename='styles/minify/post.min.css') }}" />
+			<link rel="stylesheet" href="{{ url_for('static', filename='styles/minify/posts.min.css') }}" />
+			<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='main.min.css') }}"
+			/>
+			<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
 			defer
 		></script>

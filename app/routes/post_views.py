@@ -16,9 +16,11 @@ def posts():
     posts = requests.get('http://localhost:5000/api/posts').json()
     if not len(posts) == 0:
         cache.set("posts", posts)
-    response = make_response(render_template("posts.html", title="Posts", posts=cache.get('posts')))
-    response.headers['Cache-Control'] = 'public, max-age=300'
-    response.et
+
+    cache_control = "public max-age=300 must-revalidate"
+    response = make_response(render_template("posts.html", title="Posts", posts=cache.get('posts'), cacheControl=cache_control))
+    response.headers['Cache-Control'] = ",".join(cache_control.split(' '))
+    
     return response
 
 @postBp.get("/list")

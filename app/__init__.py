@@ -28,6 +28,7 @@ def create_app():
   # instance_relative_config=True: load config from instance folder
   app = Flask(__name__, instance_relative_config=True)
   cache.init_app(app, config=CACHE_CONFIG)
+
   # add routes
   from .routes import public_views, post_views, api_views
  
