@@ -35,11 +35,12 @@ def create_app():
       # register domain on https://hstspreload.org/ to prevent third party attacks and ensure https ; the list of domains that will browser download to use https
       response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'
       response.headers['Access-Control-Allow-Origin'] = 'same-origin'
-      response.headers['Content-Security-Policy'] = "default-src 'self' cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com fonts.googleapis.com cdnjs.cloudflare.com; style-src 'self' fonts.googleapis.com cdnjs.cloudflare.com unpkg.com 'unsafe-inline'; script-src 'self' cdnjs.cloudflare.com esm.sh"
+      response.headers['Content-Security-Policy'] = "default-src 'self' cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com fonts.googleapis.com cdnjs.cloudflare.com; style-src 'self' fonts.googleapis.com cdnjs.cloudflare.com unpkg.com 'unsafe-inline'; script-src 'self' cdnjs.cloudflare.com esm.sh 'unsafe-inline'; img-src 'self' cdn.dummyjson.com"
       response.headers['X-Content-Type-Options'] = 'nosniff'
       response.headers['X-Frame-Options'] = 'SAMEORIGIN'
       response.headers['X-XSS-Protection'] = '1; mode=block'
       response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+      # response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'
       return response
   # add routes
   from .routes import public_views, post_views, api_views
